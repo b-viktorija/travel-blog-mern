@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   color: #333;
 }
@@ -6,13 +10,13 @@ img {
   max-width: 100%;
 }
 
-main{
+main {
   padding: 10px;
   max-width: 800px;
   margin: 0 auto;
 }
 
-header{ 
+header {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
@@ -20,7 +24,7 @@ header{
   align-items: center;
 }
 
-header a{
+header a {
   text-decoration: none;
   color: inherit;
 }
@@ -30,26 +34,26 @@ header a.logo {
   font-size: 1.8rem;
 }
 
-
-header nav{ 
+header nav {
   display: flex;
-  gap: 15px; 
+  gap: 15px;
 }
 
 footer {
-bottom: 0;
-width: 100%;
-text-align: center;}
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
 
-div.post { 
+div.post {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 20px;
   margin-bottom: 35px;
 }
 
-div.post div.image{
-width: 100%;
+div.post div.image {
+  width: 100%;
 }
 
 div.post h2 {
@@ -60,7 +64,7 @@ div.post h2 {
 div .post p.info {
   margin: 0;
   color: #888;
-  font-size:0.7rem;
+  font-size: 0.7rem;
   font-weight: bold;
   margin: 6px 0;
   display: flex;
@@ -71,7 +75,43 @@ div.post p.info a.author {
   color: #333;
 }
 
-div.post p.summary{
+div.post p.summary {
   margin: 6px 0;
 }
 
+/* login styles */
+form {
+  padding: 20px 0;
+  position: relative;
+  border-radius: 10px;
+  margin: 0 auto;
+  max-width: 400px;
+}
+form input {
+  border: 1px solid rgba(252, 252, 252, 0.4);
+  width: 100%;
+  border-radius: 5px;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  background-color: #dcdcdc;
+}
+
+button {
+  background-color: #555;
+  border: 0;
+  width: 100%;
+  display: block;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  color: #dcdcdc;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+form h1 {
+  text-align: center;
+}
