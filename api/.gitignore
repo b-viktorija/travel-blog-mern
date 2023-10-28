@@ -1,0 +1,11 @@
+# Dependencies
+/node_modules
+
+# Build artifacts
+/build
+
+# Configuration files
+.env
+
+# Other files/directories to ignore
+.DS_Store
