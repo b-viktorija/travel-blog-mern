@@ -36,6 +36,11 @@ header nav{
   gap: 15px; 
 }
 
+footer {
+bottom: 0;
+width: 100%;
+text-align: center;}
+
 div.post { 
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -69,3 +74,4 @@ div.post p.info a.author {
 div.post p.summary{
   margin: 6px 0;
 }
+
