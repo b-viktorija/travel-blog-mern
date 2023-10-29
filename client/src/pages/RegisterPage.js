@@ -1,4 +1,6 @@
-import { useState } from "react"
+import { useState } from "react";
+import Button from 'react-bootstrap/Button';
+
 
 function RegisterPage() {
   const [username, setUsername] = useState("")
@@ -39,9 +41,9 @@ function RegisterPage() {
         value={password}
         onChange={logPassword}
       />
-      <button type="submit" acti>
+      <Button type="submit" variant="dark">
         Register
-      </button>
+      </Button>
     </form>
   )
 }

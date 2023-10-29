@@ -45,7 +45,7 @@ footer {
   text-align: center;
 }
 
-div.post {
+div.post, div.Gallery {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 20px;
@@ -100,18 +100,10 @@ form input {
   background-color: #dcdcdc;
 }
 
-button {
-  background-color: #555;
-  border: 0;
-  width: 100%;
-  display: block;
-  padding: 10px 15px;
-  margin: 0 auto 10px auto;
-  color: #dcdcdc;
-  border-radius: 3px;
-  font-size: 18px;
-}
-
 form h1 {
   text-align: center;
+}
+
+Button {
+  width: 100%;
 }
