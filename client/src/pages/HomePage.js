@@ -4,7 +4,7 @@ import Gallery from "../components/Gallery"
 function HomePage() {
   return (
     <div>
-      <Gallery />
+      {/* <Gallery /> */}
       <Post />
       <Post />
       <Post />

@@ -1,6 +1,5 @@
-import { useState } from "react";
-import Button from 'react-bootstrap/Button';
-
+import { useState } from "react"
+import Button from "react-bootstrap/Button"
 
 function RegisterPage() {
   const [username, setUsername] = useState("")
@@ -19,11 +18,16 @@ function RegisterPage() {
     setUsername("")
     setPassword("")
     // send post request w/o installing axios or other library
-    await fetch("http://localhost:4000/register", {
+    const response = await fetch("http://localhost:4000/register", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-type": "application/json" },
     })
+    if (response.status !== 200) {
+      alert("Registration failed"); 
+    } else {
+      alert("Registration successful");
+    }
   }
 
   return (
