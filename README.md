@@ -18,7 +18,7 @@ Travel Blog is a personal project designed to:
 
 ## Features
 
-- **Homepage**: Modern user interface, attention grabbing landing page, explore featured travel blog posts.
+- **Homepage**: Modern & Resposive UI, lets user explore featured travel blog posts.
 - **Blog**: Read detailed travel stories and experiences.
 - **About**: Learn about the creators and the blog's purpose.
 - **Login & Register**: Create an account or log in, create your own posts. 
