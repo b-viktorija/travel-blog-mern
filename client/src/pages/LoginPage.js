@@ -1,28 +1,41 @@
-import { useState } from "react"
-import Button from "react-bootstrap/Button"
+import { useState } from "react";
+import { Navigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 function LoginPage() {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [redirect, setRedirect] = useState(false);
 
   const logUsername = (e) => {
-    setUsername(e.target.value)
-  }
+    setUsername(e.target.value);
+  };
 
   const logPassword = (e) => {
-    setPassword(e.target.value)
-  }
+    setPassword(e.target.value);
+  };
 
   async function login(e) {
-    e.preventDefault()
-    setUsername("")
-    setPassword("")
-    await fetch ('http://localhost:4000/login', {
-      method: 'POST', 
-      body: JSON.stringify({username, password}),
-      headers: {'Content-Type':'application/json'}
+    e.preventDefault();
+    const response = await fetch("http://localhost:4000/login", {
+      method: "POST",
+      body: JSON.stringify({ username, password }),
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+    });
 
-    })
+    setUsername("");
+    setPassword("");
+
+    if (response.ok) {
+      setRedirect(true);
+    } else {
+      alert('wrong credentials');
+    }
+  }
+
+  if (redirect) {
+    return <Navigate to={"/"} />;
   }
 
   return (
@@ -44,7 +57,7 @@ function LoginPage() {
         Submit
       </Button>
     </form>
-  )
+  );
 }
 
-export default LoginPage
+export default LoginPage;
