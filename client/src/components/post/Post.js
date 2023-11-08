@@ -1,3 +1,5 @@
+import './post.css'
+
 function Post() {
   return (
     <div className="post">
