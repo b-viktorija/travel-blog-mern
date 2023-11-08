@@ -21,7 +21,7 @@ form {
   padding: 20px 0;
   position: relative;
   border-radius: 10px;
-  margin: 0 auto;
+  margin: 10px auto 60px ;
   max-width: 400px;
 }
 form input {
@@ -39,6 +39,7 @@ form input {
 
 form h1 {
   text-align: center;
+  padding: 30px;
 }
 
 Button {
@@ -93,3 +94,5 @@ Button {
     rgba(204, 204, 204, 0.7) 100%
   );
 }
+
+

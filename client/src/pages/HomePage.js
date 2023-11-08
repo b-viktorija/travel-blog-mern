@@ -11,13 +11,12 @@ function HomePage() {
         <div className="vid-shadow" />
         <div className="text-container">
           <h1>EXPLORE THE WORLD WITH ME!</h1>
-        <h2>Join me on our next adventure!</h2>
-        <p>Scroll down to start traveling ↓</p>
+          <h2>Join me on our next adventure!</h2>
+          <p>Scroll down to start traveling ↓</p>
+        </div>
       </div>
-      </div>
-     
 
-      {/* <Gallery /> */}
+    {/* <Gallery /> */}
       <Blog />
     </div>
   )

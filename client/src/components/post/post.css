@@ -1,12 +1,11 @@
 
 /* blog styles */
 div.post, div.Gallery {
-  margin: auto;
+  margin: 2rem auto;
   max-width: 800px;
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 20px;
-  margin-bottom: 35px;
 }
 
 div.post div.image {
