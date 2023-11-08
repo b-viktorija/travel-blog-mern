@@ -5,7 +5,7 @@ Travel Blog is a web application created using the MERN (MongoDB, Express.js, Re
 ## Project Overview
 
 Travel Blog is a personal project designed to:
-- Implement frontend development skills using React and Bootstrap;
+- Implement frontend development skills using React;
 - Gain experience in backend development with the MERN stack;
 - Create a platform for travelers to share their adventures and inspire others;
 
@@ -27,7 +27,7 @@ Travel Blog is a personal project designed to:
 
 - Frontend:
   - React
-  - Bootstrap
+  - Bootstrap & Vanilla CSS 
 
 - Backend:
   - Node.js
