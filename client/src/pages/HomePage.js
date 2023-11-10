@@ -1,5 +1,6 @@
 import Gallery from "../components/Gallery"
 import Blog from "./Blog"
+import Container from "react-bootstrap/esm/Container"
 
 function HomePage() {
   return (

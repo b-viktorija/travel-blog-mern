@@ -62,7 +62,8 @@ Button {
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-}
+ }
+
 .text-container h1 {
   font-size: 4rem;
   margin: 30px;
@@ -94,5 +95,3 @@ Button {
     rgba(204, 204, 204, 0.7) 100%
   );
 }
-
-
