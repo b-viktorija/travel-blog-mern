@@ -21,7 +21,7 @@ form {
   padding: 20px 0;
   position: relative;
   border-radius: 10px;
-  margin: 10px auto 60px ;
+  margin: 10px auto 60px;
   max-width: 400px;
 }
 form input {
@@ -62,7 +62,7 @@ Button {
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
- }
+}
 
 .text-container h1 {
   font-size: 4rem;
@@ -94,4 +94,38 @@ Button {
     rgba(0, 0, 0, 0.8) 61%,
     rgba(204, 204, 204, 0.7) 100%
   );
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 1000px) {
+  .text-container h1 {
+    font-size: 2rem;
+    margin: 10px;
+  }
+
+  .text-container h2 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+  }
+
+  .text-container p {
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 580px) {
+  .text-container h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    letter-spacing: 3px;
+  }
+
+  .text-container h2 {
+    font-size: 1rem;
+  }
+
+  .text-container p {
+    font-size: 0.7rem;
+    margin: auto;
+  }
 }

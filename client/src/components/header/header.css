@@ -27,6 +27,8 @@ header {
   padding: 10px 80px;
   color: white;
   background-color: black;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 header a {
@@ -42,4 +44,10 @@ header a.logo {
 header nav {
   display: flex;
   gap: 35px;
+}
+
+.new-post{
+  color: yellow;
+  font-weight: 600;
+  text-transform: uppercase;
 }

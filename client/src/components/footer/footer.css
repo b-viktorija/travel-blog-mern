@@ -2,8 +2,9 @@
 footer {
   text-align: center;
   width: 100%;
-  background-color: #d3d3d3;
+  background-color: #808080;
   padding: 20px;
+  color: whitesmoke;
 }
 
 .img-container {
@@ -16,5 +17,5 @@ footer p {
 
 footer a {
   text-decoration: none;
-  color: black;
+  color: whitesmoke;
 }

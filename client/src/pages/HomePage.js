@@ -1,26 +1,38 @@
-import Gallery from "../components/Gallery"
-import Blog from "./Blog"
-import Container from "react-bootstrap/esm/Container"
+import Gallery from "../components/Gallery";
+import Blog from "./Blog";
+import { Container, Row, Col } from "react-bootstrap";
 
 function HomePage() {
   return (
-    <div>
+    <Container fluid className="p-0">
       <div className="vid-container">
         <video autoPlay muted loop>
           <source src="videos/videoplayback.mp4" type="video/mp4" />
         </video>
         <div className="vid-shadow" />
         <div className="text-container">
-          <h1>EXPLORE THE WORLD WITH ME!</h1>
-          <h2>Join me on our next adventure!</h2>
-          <p>Scroll down to start traveling ↓</p>
+          <Row>
+            <Col md={12}>
+              <h1 className="">EXPLORE THE WORLD WITH ME!</h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12}>
+              <h2 className="">Join me on our next adventure!</h2>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12}>
+              <p className="lead">Scroll down to start traveling ↓</p>
+            </Col>
+          </Row>
         </div>
       </div>
 
-    {/* <Gallery /> */}
+      {/* <Gallery /> */}
       <Blog />
-    </div>
-  )
+    </Container>
+  );
 }
 
-export default HomePage
+export default HomePage;

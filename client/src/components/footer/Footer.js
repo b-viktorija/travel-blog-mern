@@ -4,6 +4,8 @@ import Image from "react-bootstrap/Image"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
+// make footer stick to bottom, leaving no margin if the content doesn't cover the whole screen on smaller viewports; 
+
 const currentDate = new Date()
 const year = currentDate.getFullYear()
 
@@ -42,7 +44,7 @@ function Footer() {
         <p>
           Made by: Viktorija Bosilkovska |<a href="https://github.com/b-viktorija"> Click here to connect!</a>{" "}
         </p>
-        <p>Copyright {year}</p>
+        <p>© Copyright {year}</p>
       </div>
     </footer>
   )

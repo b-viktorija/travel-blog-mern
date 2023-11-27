@@ -14,7 +14,7 @@ const secret = 'dad9232jfsdjdadqwds000asbosw236'
 
 // middleware, cors, and json parser
 app.use(cors({
-  origin: "http://localhost:3000", // Replace with the actual origin of your frontend
+  origin: "http://localhost:3000", // the origin of your frontend;
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
 }));
@@ -67,9 +67,15 @@ app.post("/login", async (req, res) => {
 
 app.get('/profile', (req, res) => {
   const {token} = req.cookies;
-  res.json(req.cookies);
+  jwt.verify(token, secret, {}, (err, info) => {
+    if (err) throw err;
+    res.json(info);
+  })
 });
 
+app.post('/logout', (req, res) => {
+  res.cookie('token', '').json('ok');
+})
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`)

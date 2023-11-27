@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  // redirect to home page if logged in; 
   const [redirect, setRedirect] = useState(false);
 
   const logUsername = (e) => {
