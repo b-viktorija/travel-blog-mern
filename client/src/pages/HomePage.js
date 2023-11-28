@@ -2,6 +2,10 @@ import Gallery from "../components/Gallery";
 import Blog from "./Blog";
 import { Container, Row, Col } from "react-bootstrap";
 
+// fix gallery component;
+//on click of scroll down button it should take you automatically down to posts; 
+
+
 function HomePage() {
   return (
     <Container fluid className="p-0">
@@ -23,7 +27,7 @@ function HomePage() {
           </Row>
           <Row>
             <Col md={12}>
-              <p className="lead">Scroll down to start traveling ↓</p>
+              <button className="lead">Scroll down to start traveling ↓</button>
             </Col>
           </Row>
         </div>

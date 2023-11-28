@@ -5,6 +5,9 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
 // make footer stick to bottom, leaving no margin if the content doesn't cover the whole screen on smaller viewports; 
+// on mobile viewport, show one (maybe randomly selected) from the photos;
+//on hover photo, add overlay shadow and show title where it is;
+//display images dynamically from array; 
 
 const currentDate = new Date()
 const year = currentDate.getFullYear()

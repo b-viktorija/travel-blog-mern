@@ -73,6 +73,7 @@ app.get('/profile', (req, res) => {
   })
 });
 
+//invalidates the cookie in order to log you out; 
 app.post('/logout', (req, res) => {
   res.cookie('token', '').json('ok');
 })

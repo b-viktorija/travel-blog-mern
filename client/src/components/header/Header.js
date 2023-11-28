@@ -1,18 +1,18 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { Link } from "react-router-dom"
 import "./header.css"
+import { UserContext } from "../../userContext"
 
 // fix header responsivity;
 
 function Header() {
-  const [username, setUsername] = useState(null)
-
+  const {setUserInfo} = useContext(UserContext)
   useEffect(() => {
     fetch("http://localhost:4000/profile", {
       credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {
-        setUsername(userInfo.username)
+        setUserInfo(userInfo)
       })
     })
   }, [])
@@ -22,7 +22,9 @@ function Header() {
       credentials: "include",
       method: "POST",
     })
+    setUserInfo(null)
   }
+
 
   return (
     <header>

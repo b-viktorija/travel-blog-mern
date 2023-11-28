@@ -1,3 +1,5 @@
+/* split css styles for diff pages in different folder; */
+
 /* global styles */
 * {
   box-sizing: border-box;
@@ -71,9 +73,11 @@ Button {
   font-weight: bolder;
 }
 
-.text-container p {
+.text-container button {
+  background-color: transparent;
   margin: 40px auto;
-  border: solid 1px;
+  color: white;
+  border: solid 1px white;
   padding: 10px;
 }
 
@@ -108,7 +112,7 @@ Button {
     margin: 15px 0;
   }
 
-  .text-container p {
+  .text-container button {
     margin: 20px auto;
   }
 }
@@ -124,7 +128,7 @@ Button {
     font-size: 1rem;
   }
 
-  .text-container p {
+  .text-container button {
     font-size: 0.7rem;
     margin: auto;
   }
