@@ -5,7 +5,6 @@ import { Container, Row, Col } from "react-bootstrap";
 // fix gallery component;
 //on click of scroll down button it should take you automatically down to posts; 
 
-
 function HomePage() {
   return (
     <Container fluid className="p-0">

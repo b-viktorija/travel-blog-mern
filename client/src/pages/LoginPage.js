@@ -1,42 +1,46 @@
-import { useState } from "react";
-import { Navigate } from "react-router-dom";
-import Button from "react-bootstrap/Button";
+import { useState, useContext } from "react"
+import { Navigate } from "react-router-dom"
+import Button from "react-bootstrap/Button"
+import {UserContext} from "../userContext";
 
 function LoginPage() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  // redirect to home page if logged in; 
-  const [redirect, setRedirect] = useState(false);
-
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  // redirect to home page if logged in;
+  const [redirect, setRedirect] = useState(false)
+  const { setUserInfo } = useContext(UserContext)
   const logUsername = (e) => {
-    setUsername(e.target.value);
-  };
+    setUsername(e.target.value)
+  }
 
   const logPassword = (e) => {
-    setPassword(e.target.value);
-  };
+    setPassword(e.target.value)
+  }
 
   async function login(e) {
-    e.preventDefault();
+    e.preventDefault()
     const response = await fetch("http://localhost:4000/login", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
       credentials: "include",
-    });
+    })
 
-    setUsername("");
-    setPassword("");
+    setUsername("")
+    setPassword("")
 
     if (response.ok) {
-      setRedirect(true);
+      response.json().then((userInfo) => {
+        setUserInfo(userInfo)
+        setRedirect(true)
+      })
     } else {
-      alert('wrong credentials');
+      alert("wrong credentials")
     }
   }
 
   if (redirect) {
-    return <Navigate to={"/"} />;
+    return <Navigate to={"/"} />
   }
 
   return (
@@ -58,7 +62,7 @@ function LoginPage() {
         Submit
       </Button>
     </form>
-  );
+  )
 }
 
-export default LoginPage;
+export default LoginPage
