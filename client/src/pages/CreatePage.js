@@ -18,13 +18,29 @@ const modules = {
   ],
 }
 
-function CreatePost() {
+function CreatePage() {
   const [title, setTitle] = useState("")
   const [summary, setSummary] = useState("")
   const [content, setContent] = useState("")
+  const [files, setFiles] = useState("")
+
+  function createNewPost(e) {
+    const data = new FormData()
+    data.set("title", title)
+    data.set("summary", summary)
+    data.set("content", content)
+    data.set('file', files[0]);
+    e.preventDefault()
+    console.log(files);
+    // sending the data to the api endpoint; 
+     fetch("http://localhost:4000/post", {
+        method: 'POST',
+        body: data, 
+      })
+  }
 
   return (
-    <form className="create">
+    <form className="create" onSubmit={createNewPost}>
       <h3 className="text-center mb-4 text-secondary">
         Inspire others by sharing your unique experiences—create your post now
         and be part of our vibrant community!
@@ -43,13 +59,17 @@ function CreatePost() {
           value={summary}
           onChange={(event) => setSummary(event.target.value)}
         />
-        <input type="file" />
+        <input
+          type="file"
+          // value={files}
+          onChange={(ev) => setFiles(ev.target.files)}
+        />
       </div>
       <div>
         <ReactQuill
           className="quill"
           value={content}
-          // on change just gives us the new value, not target; 
+          // on change just gives us the new value, not target;
           onChange={(newValue) => setContent(newValue)}
           modules={modules}
         />
@@ -64,4 +84,4 @@ function CreatePost() {
   )
 }
 
-export default CreatePost
+export default CreatePage

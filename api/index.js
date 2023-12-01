@@ -30,6 +30,8 @@ mongoose.connect(
 
 const port = 4000
 
+// creating the post endpoints
+
 // the async await function creates the user in the database;
 app.post("/register", async (req, res) => {
   const { username, password } = req.body
@@ -79,6 +81,11 @@ app.get('/profile', (req, res) => {
 //invalidates the cookie in order to log you out; 
 app.post('/logout', (req, res) => {
   res.cookie('token', '').json('ok');
+})
+
+// on submit of new post, we access this =, upload the file to uploads 
+app.post('/post', (req, res) => {
+  
 })
 
 app.listen(port, () => {
