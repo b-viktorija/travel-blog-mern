@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import "./header.css"
 import { UserContext } from "../../userContext"
 
-// fix header responsivity - import from bootstrap; 
+// fix header responsivity - import header from bootstrap; 
 
 function Header() {
   const {setUserInfo,userInfo} = useContext(UserContext)

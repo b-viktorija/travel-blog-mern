@@ -69,7 +69,7 @@ function CreatePage() {
         <ReactQuill
           className="quill"
           value={content}
-          // on change just gives us the new value, not target;
+          // on change, here we only get the new value, not target.value;
           onChange={(newValue) => setContent(newValue)}
           modules={modules}
         />
