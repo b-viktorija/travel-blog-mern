@@ -122,6 +122,7 @@ Button {
   }
 }
 
+/* media queries for smaller screens */
 @media (max-width: 580px) {
   .text-container h1 {
     font-size: 1.4rem;
