@@ -18,13 +18,13 @@ const modules = {
   ],
 }
 
-function CreatePage() {
+ function CreatePage() {
   const [title, setTitle] = useState("")
   const [summary, setSummary] = useState("")
   const [content, setContent] = useState("")
   const [files, setFiles] = useState("")
 
-  function createNewPost(e) {
+  async function createNewPost(e) {
     const data = new FormData()
     data.set("title", title)
     data.set("summary", summary)
@@ -33,10 +33,11 @@ function CreatePage() {
     e.preventDefault()
     console.log(files);
     // sending the data to the api endpoint; 
-     fetch("http://localhost:4000/post", {
+    const response = await fetch("http://localhost:4000/post", {
         method: 'POST',
         body: data, 
       })
+      console.log(await response.json())
   }
 
   return (

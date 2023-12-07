@@ -3,26 +3,31 @@ import cors from "cors"
 import mongoose from "mongoose"
 import User from "./models/User.js"
 import bcrypt from "bcrypt"
-import jwt from "jsonwebtoken"; 
-import cookieParser from "cookie-parser";
+import jwt from "jsonwebtoken"
+import cookieParser from "cookie-parser"
+import multer from "multer"
+
+const uploadMiddleware = multer({ dest: "uploads/" })
 
 const app = express()
 
 // generates a hash for the password
 const salt = bcrypt.genSaltSync(10)
-const secret = 'dad9232jfsdjdadqwds000asbosw236'
+const secret = "dad9232jfsdjdadqwds000asbosw236"
 
 // middleware, cors, and json parser
-app.use(cors({
-  origin: "http://localhost:3000", // the origin of your frontend;
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: "http://localhost:3000", // the origin of your frontend;
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+  })
+)
 app.use(express.json())
 // connect to mongoose database, insert connection string here;
 // connection string: mongodb+srv://blog:<Vtf9e6f5O41rpzAR>@cluster0.g1u.mongodb.net/?retryWrites=true&w=majority
 
-app.use(cookieParser());
+app.use(cookieParser())
 
 mongoose.connect(
   "mongodb+srv://blog:Vtf9e6f5O41rpzAR@cluster0.g1uznrr.mongodb.net/?retryWrites=true&w=majority"
@@ -58,11 +63,11 @@ app.post("/login", async (req, res) => {
   if (passOk) {
     //user logged in
     jwt.sign({ username, id: userDoc._id }, secret, {}, (err, token) => {
-      if (err) throw err; 
-      res.cookie('token', token).json({
-        id:userDoc._id,
-        username, 
-      });
+      if (err) throw err
+      res.cookie("token", token).json({
+        id: userDoc._id,
+        username,
+      })
     })
   } else {
     // user not logged in
@@ -70,22 +75,25 @@ app.post("/login", async (req, res) => {
   }
 })
 
-app.get('/profile', (req, res) => {
-  const {token} = req.cookies;
+app.get("/profile", (req, res) => {
+  const { token } = req.cookies
   jwt.verify(token, secret, {}, (err, info) => {
-    if (err) throw err;
-    res.json(info);
+    if (err) throw err
+    res.json(info)
   })
-});
-
-//invalidates the cookie in order to log you out; 
-app.post('/logout', (req, res) => {
-  res.cookie('token', '').json('ok');
 })
 
-// on submit of new post, we access this =, upload the file to uploads 
-app.post('/post', (req, res) => {
-  
+//invalidates the cookie in order to log you out;
+app.post("/logout", (req, res) => {
+  res.cookie("token", "").json("ok")
+})
+
+// on submit of new post, we access this =, upload the file to uploads
+app.post("/post", uploadMiddleware.single('file'), (req, res) => {
+  const {originalname} = req.file;
+  const parts = originalname.split('.');
+  const ext = parts[parts.length - 1];
+  res.json({ext});
 })
 
 app.listen(port, () => {
