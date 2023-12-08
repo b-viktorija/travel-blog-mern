@@ -1,10 +1,11 @@
 import Blog from "./Blog"
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col, Button, Card } from "react-bootstrap"
 
-//on click of scroll down button it should take you automatically down to posts;
+// scroll isn't responsive;
 
 function HomePage() {
   return (
+    // landing page video
     <Container fluid className="p-0">
       <div className="vid-container">
         <video autoPlay muted loop>
@@ -24,13 +25,47 @@ function HomePage() {
           </Row>
           <Row>
             <Col md={12}>
-              <button className="lead">Scroll down to start traveling ↓</button>
+              <button
+                className="lead"
+                onClick={() =>
+                  window.scrollTo({ top: 900, behavior: "smooth" })
+                }
+              >
+                Scroll down to start traveling ↓
+              </button>
             </Col>
           </Row>
         </div>
       </div>
 
       <Blog />
+
+      {/* Call for action */}
+      <Card className="text-center w-75 m-auto mb-4 p-2">
+        <Card.Header>Join us today</Card.Header>
+        <Card.Body>
+          <Card.Title>Share your own stories!</Card.Title>
+          <Card.Text>
+            Become part of our team, and tell us more about your own adventures!
+          </Card.Text>
+          <Card.Img
+            src="/images/30765-3-travel-photos.png"
+            className="w-75 mb-4"
+          />
+          <div className="d-flex">
+            <a href="/login" className="w-100">
+              <Button variant="outline-dark" size="lg" className="">
+                Log In
+              </Button>
+            </a>
+            <a href="/register" className="ms-4 w-100">
+              <Button variant="dark" size="lg">
+                Register
+              </Button>
+            </a>
+          </div>
+        </Card.Body>
+      </Card>
     </Container>
   )
 }

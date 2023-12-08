@@ -1,5 +1,5 @@
 import "./App.css"
-import Layout from "./components/Layout"
+import Layout from "./Layout"
 import { Route, Routes } from "react-router-dom"
 import Blog from "./pages/Blog"
 import About from "./pages/About"

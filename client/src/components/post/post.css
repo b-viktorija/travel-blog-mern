@@ -1,24 +1,12 @@
 
 /* blog styles */
-div.post, div.Gallery {
-  margin: 2rem auto;
-  max-width: 800px;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 20px;
-}
-
-div.post div.image {
-  width: 100%;
-}
 
 div.post h2 {
-  margin: 0;
+  margin: 10px 0 0;
   font-size: 1.4rem;
 }
 
 div .post p.info {
-  margin: 0;
   color: #888;
   font-size: 0.7rem;
   font-weight: bold;
@@ -29,8 +17,4 @@ div .post p.info {
 
 div.post p.info a.author {
   color: #333;
-}
-
-div.post p.summary {
-  margin: 6px 0;
 }

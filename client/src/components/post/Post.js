@@ -2,16 +2,16 @@ import './post.css'
 
 function Post() {
   return (
-    <div className="post">
+    <div className="post p-2 m-4">
       <div className="image">
-        <img src="https://cdn.statically.io/img/haleyblackall.com/wp-content/uploads/2022/01/Love-Valley-Cappadocia-Turkey-2021-1-21.jpg?quality=80&f=auto" />
+        <img src="https://cdn.statically.io/img/haleyblackall.com/wp-content/uploads/2022/01/Love-Valley-Cappadocia-Turkey-2021-1-21.jpg?quality=80&f=auto" alt="cappadocia-img"/>
       </div>
       <div className="content">
         <h2>
           Cappadocia Travel Guide: Where to Stay + What to Do for First Timers
         </h2>
         <p className="info">
-          <a className="author">Viktorija Bosilkovska</a>{" "}
+          <a className="author" href="https://github.com/b-viktorija" >Viktorija Bosilkovska</a>
           <time>2023-10-28 14:41</time>
         </p>
         <p className="summary">
