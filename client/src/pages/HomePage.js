@@ -1,4 +1,3 @@
-import Gallery from "../components/Gallery"
 import Blog from "./Blog"
 import { Container, Row, Col } from "react-bootstrap"
 
