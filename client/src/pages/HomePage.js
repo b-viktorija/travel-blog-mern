@@ -1,9 +1,8 @@
-import Gallery from "../components/Gallery";
-import Blog from "./Blog";
-import { Container, Row, Col } from "react-bootstrap";
+import Gallery from "../components/Gallery"
+import Blog from "./Blog"
+import { Container, Row, Col } from "react-bootstrap"
 
-// fix gallery component;
-//on click of scroll down button it should take you automatically down to posts; 
+//on click of scroll down button it should take you automatically down to posts;
 
 function HomePage() {
   return (
@@ -32,10 +31,9 @@ function HomePage() {
         </div>
       </div>
 
-      {/* <Gallery /> */}
       <Blog />
     </Container>
-  );
+  )
 }
 
-export default HomePage;
+export default HomePage
