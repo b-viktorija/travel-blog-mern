@@ -4,7 +4,7 @@ function About() {
   return (
     <Container className="p-4">
       <Row>
-        <Col md={6} className="d-flex align-items-center"> 
+        <Col md={6} className="d-flex align-items-center">
           <img
             src="https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_600/waunaxzgmyu3sbjxk8jx"
             alt="About Me"
@@ -29,16 +29,18 @@ function About() {
                 springs.
               </p>
               <p>
-              🐠 Australia's Great Barrier Reef offered a vibrant underwater
-              spectacle. Snorkeling in a kaleidoscope of colors was pure magic!
-              New Zealand 🇳🇿, with its fjords and bungee jumping, was an
-              adrenaline rush!
-              <p />
-              <p>
-              🏛️ Athens 🇬🇷 whispered tales of gods at the Acropolis. Now, buckle
-              up as we embark on a rollercoaster of global exploration! 🚀✈️
+                🐠 Australia's Great Barrier Reef offered a vibrant underwater
+                spectacle. Snorkeling in a kaleidoscope of colors was pure
+                magic! New Zealand 🇳🇿, with its fjords and bungee jumping, was a
+                once in a lifetime adrenaline rush!
+                <p />
+                <p>
+                  🏛️ Athens 🇬🇷 whispered tales of gods at the Acropolis. Walking
+                  among history reminded us how small our time frame is on this
+                  earth! Now, buckle up as we embark on a rollercoaster of
+                  global exploration! 🚀✈️
+                </p>
               </p>
-            </p>
             </div>
           </div>
         </Col>
