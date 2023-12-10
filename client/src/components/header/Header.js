@@ -2,11 +2,12 @@ import { useState, useEffect, useContext } from "react"
 import { Link } from "react-router-dom"
 import "./header.css"
 import { UserContext } from "../../userContext"
-
-// fix header responsivity - import header from bootstrap; 
+import Container from "react-bootstrap/Container"
+import Nav from "react-bootstrap/Nav"
+import Navbar from "react-bootstrap/Navbar"
 
 function Header() {
-  const {setUserInfo,userInfo} = useContext(UserContext)
+  const { setUserInfo, userInfo } = useContext(UserContext)
   useEffect(() => {
     fetch("http://localhost:4000/profile", {
       credentials: "include",
@@ -25,34 +26,47 @@ function Header() {
     setUserInfo(null)
   }
 
-  const username = userInfo?.username; 
+  const username = userInfo?.username
 
   return (
-    <header>
-      <Link to="/" className="logo">
-        <img src="images/globe.png" />
-        TRAVEL<span class="small">log</span>
-      </Link>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/about">About</Link>
-        {username && (
-          <>
-            <a onClick={logout}>Logout</a>
-            <Link to="/create">
-              <span className="new-post">Create new post</span>
-            </Link>
-          </>
-        )}
-        {!username && (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-          </>
-        )}
-      </nav>
-    </header>
+    <Navbar
+      collapseOnSelect
+      expand="sm"
+      bg="black"
+      data-bs-theme="dark"
+      // fixed="top"
+    >
+      <Container>
+        <Navbar.Brand>
+          <Link to="/" className="logo">
+            <img src="images/globe.png" />
+            TRAVEL<span class="small">log</span>
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav>
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/blog">Blog</Nav.Link>
+          <Nav.Link href="/about">About</Nav.Link>
+            {username && (
+              <>
+                <Nav.Link onClick={logout}>Logout</Nav.Link>
+                <Nav.Link href="/create">
+                  <span className="new-post">Create new post</span>
+                </Nav.Link>
+              </>
+            )}
+            {!username && (
+              <>
+                <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link href="/register">Register</Nav.Link>
+              </>
+            )}
+        </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   )
 }
 

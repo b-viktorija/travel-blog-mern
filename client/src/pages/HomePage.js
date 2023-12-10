@@ -2,6 +2,8 @@ import Blog from "./Blog"
 import { Container, Row, Col, Button, Card } from "react-bootstrap"
 
 // scroll isn't responsive;
+// make whole site dark mode - dark background white texts; grey; 
+// make video design mobile friendly; 
 
 function HomePage() {
   return (

@@ -6,7 +6,6 @@ import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 import cookieParser from "cookie-parser"
 import multer from "multer"
-
 const uploadMiddleware = multer({ dest: "uploads/" })
 
 const app = express()
