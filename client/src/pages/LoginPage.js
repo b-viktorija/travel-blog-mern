@@ -64,7 +64,7 @@ function LoginPage() {
           Submit
         </Button>
       </form>
-      <img src="/images/30765-3-travel-photos.png" className="d-flex m-auto" />
+      <img src="/images/30765-3-travel-photos.png" className="d-flex m-auto" alt="travel-img" />
     </Container>
   )
 }

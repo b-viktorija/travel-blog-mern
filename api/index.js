@@ -7,7 +7,11 @@ import jwt from "jsonwebtoken"
 import cookieParser from "cookie-parser"
 import multer from "multer"
 const uploadMiddleware = multer({ dest: "uploads/" })
-
+// Make require work in es6 type:module;
+import { createRequire } from "module"
+const require = createRequire(import.meta.url)
+const fs = require("fs")
+import Post from "./models/Post.js"
 const app = express()
 
 // generates a hash for the password
@@ -87,12 +91,22 @@ app.post("/logout", (req, res) => {
   res.cookie("token", "").json("ok")
 })
 
-// on submit of new post, we access this =, upload the file to uploads
-app.post("/post", uploadMiddleware.single('file'), (req, res) => {
-  const {originalname} = req.file;
-  const parts = originalname.split('.');
-  const ext = parts[parts.length - 1];
-  res.json({ext});
+// on submit of new post, we access this, upload the file to uploads
+app.post("/post", uploadMiddleware.single("file"), async (req, res) => {
+  const { originalname, path } = req.file
+  const parts = originalname.split(".")
+  const ext = parts[parts.length - 1]
+  const newPath = path + "." + ext
+  fs.renameSync(path, newPath)
+
+  const { title, summary, content } = req.body
+  const postDoc = await Post.create({
+    title,
+    summary,
+    content,
+    cover: newPath,
+  })
+  res.json({postDoc})
 })
 
 app.listen(port, () => {
