@@ -4,10 +4,8 @@ import Image from "react-bootstrap/Image"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
-// make footer stick to bottom, leaving no margin if the content doesn't cover the whole screen on smaller viewports; 
-// on mobile viewport, show one (maybe randomly selected) from the photos;
+// on mobile viewport, show one from the photos;
 //on hover photo, add overlay shadow and show title where it is;
-//display images dynamically from array; 
 
 const currentDate = new Date()
 const year = currentDate.getFullYear()
@@ -17,35 +15,17 @@ function Footer() {
     <footer>
       <Container className="img-container">
         <Row>
-          <Col>
-            <Image
-              className="travel-img"
-              src="https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/large_jpg/eiffel-tower-in-paris-151-medium.jpg?1564742900"
-            />
-          </Col>
-          <Col>
-            <Image
-              className="travel-img"
-              src="https://live.staticflickr.com/65535/51172556839_efb2393670_b.jpg"
-            />
-          </Col>
-          <Col>
-            <Image
-              className="travel-img"
-              src="https://a.cdn-hotels.com/gdcs/production68/d1314/b12f79e7-bcce-4cac-96f8-33f98b9bfb88.jpg"
-            />
-          </Col>
-          <Col>
-            <Image
-              className="travel-img"
-              src="https://www.travelworld.it/wp-content/uploads/2020/07/Hawaii-Magagine-stayhome.jpg"
-            />
-          </Col>
+          {images.map((img, i) => (
+            <Col key={i}>
+              <Image src={img.source} alt={img.alt} />
+            </Col>
+          ))}
         </Row>
       </Container>
       <div>
         <p>
-          Made by: Viktorija Bosilkovska |<a href="https://github.com/b-viktorija"> Click here to connect!</a>{" "}
+          Made by: Viktorija Bosilkovska |
+          <a href="https://github.com/b-viktorija"> Click here to connect!</a>{" "}
         </p>
         <p>© Copyright {year}</p>
       </div>
@@ -54,3 +34,25 @@ function Footer() {
 }
 
 export default Footer
+
+const images = [
+  {
+    source:
+      "https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/large_jpg/eiffel-tower-in-paris-151-medium.jpg?1564742900",
+    alt: "img-paris",
+  },
+  {
+    source: "https://live.staticflickr.com/65535/51172556839_efb2393670_b.jpg",
+    alt: "img-plitvice-lakes",
+  },
+  {
+    source:
+      "https://a.cdn-hotels.com/gdcs/production68/d1314/b12f79e7-bcce-4cac-96f8-33f98b9bfb88.jpg",
+    alt: "img-milano",
+  },
+  {
+    source:
+      "https://www.travelworld.it/wp-content/uploads/2020/07/Hawaii-Magagine-stayhome.jpg",
+    alt: "img-island",
+  },
+]

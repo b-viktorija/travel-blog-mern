@@ -2,7 +2,7 @@ import './post.css'
 
 function Post() {
   return (
-    <div className="post p-2 m-4">
+    <div className="post p-4 m-4">
       <div className="image">
         <img src="https://cdn.statically.io/img/haleyblackall.com/wp-content/uploads/2022/01/Love-Valley-Cappadocia-Turkey-2021-1-21.jpg?quality=80&f=auto" alt="cappadocia-img"/>
       </div>

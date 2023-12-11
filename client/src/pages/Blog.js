@@ -3,7 +3,7 @@ import Post from "../components/post/Post"
 
 function Blog() {
   return (
-    <Container>
+    <Container className="blog">
       <Row>
         <Col sm={12} md={4}>
           <Post />

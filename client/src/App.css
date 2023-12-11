@@ -1,5 +1,3 @@
-/* split css styles for diff pages in different folder; */
-
 /* global styles */
 * {
   box-sizing: border-box;
@@ -12,6 +10,7 @@ img {
 main {
   max-width: 100%;
   margin: 0 auto;
+  background-color: #dcdcdc;
 }
 
 /* login styles */
@@ -22,7 +21,8 @@ form {
   margin: 10px auto 60px;
 }
 
-form.login, form.register{
+form.login,
+form.register {
   max-width: 800px;
 }
 
@@ -36,7 +36,7 @@ form input {
   display: block;
   text-align: center;
   font-size: 18px;
-  background-color: #dcdcdc;
+  background-color: #c7c7c7;
 }
 
 form.login h1,
@@ -101,6 +101,17 @@ Button {
   );
 }
 
+/* card styles */
+#card {
+  background-color: #d3d3d3ce;
+  border: none;
+}
+
+/* create post styles */
+.quill {
+  height: 200px;
+}
+
 /* Media queries for smaller screens */
 @media (max-width: 1000px) {
   .text-container h1 {
@@ -134,9 +145,4 @@ Button {
     font-size: 0.7rem;
     margin: auto;
   }
-}
-
-/* create post styles */
-.quill{
-  height: 200px;
 }

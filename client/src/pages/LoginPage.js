@@ -1,7 +1,8 @@
 import { useState, useContext } from "react"
 import { Navigate } from "react-router-dom"
 import Button from "react-bootstrap/Button"
-import {UserContext} from "../userContext";
+import { UserContext } from "../userContext"
+import { Container } from "react-bootstrap"
 
 function LoginPage() {
   const [username, setUsername] = useState("")
@@ -44,24 +45,27 @@ function LoginPage() {
   }
 
   return (
-    <form className="login" onSubmit={login}>
-      <h1>Login</h1>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={logUsername}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={logPassword}
-      />
-      <Button type="submit" variant="dark">
-        Submit
-      </Button>
-    </form>
+    <Container>
+      <form className="login" onSubmit={login}>
+        <h1>Login</h1>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={logUsername}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={logPassword}
+        />
+        <Button type="submit" variant="dark">
+          Submit
+        </Button>
+      </form>
+      <img src="/images/30765-3-travel-photos.png" className="d-flex m-auto" />
+    </Container>
   )
 }
 

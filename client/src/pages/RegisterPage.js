@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Button from "react-bootstrap/Button"
+import { Container } from "react-bootstrap"
 
 function RegisterPage() {
   const [username, setUsername] = useState("")
@@ -24,31 +25,34 @@ function RegisterPage() {
       headers: { "Content-type": "application/json" },
     })
     if (response.status !== 200) {
-      alert("Registration failed"); 
+      alert("Registration failed")
     } else {
-      alert("Registration successful");
+      alert("Registration successful")
     }
   }
 
   return (
-    <form className="register" onSubmit={registerUser}>
-      <h1>Register</h1>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={logUsername}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={logPassword}
-      />
-      <Button type="submit" variant="dark">
-        Register
-      </Button>
-    </form>
+    <Container>
+      <form className="register" onSubmit={registerUser}>
+        <h1>Register</h1>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={logUsername}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={logPassword}
+        />
+        <Button type="submit" variant="dark">
+          Register
+        </Button>
+      </form>
+      <img src="/images/30765-3-travel-photos.png" className="d-flex m-auto" />
+    </Container>
   )
 }
 

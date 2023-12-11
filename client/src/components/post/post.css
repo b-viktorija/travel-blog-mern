@@ -1,6 +1,10 @@
 
 /* blog styles */
 
+div.post {
+  background-color: #d3d3d3ce;
+}
+
 div.post h2 {
   margin: 10px 0 0;
   font-size: 1.4rem;
