@@ -4,9 +4,6 @@ import Image from "react-bootstrap/Image"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
-// on mobile viewport, show one from the photos;
-//on hover photo, add overlay shadow and show title where it is;
-
 const currentDate = new Date()
 const year = currentDate.getFullYear()
 
@@ -16,7 +13,7 @@ function Footer() {
       <Container className="img-container">
         <Row>
           {images.map((img, i) => (
-            <Col key={i}>
+            <Col key={i} >
               <Image src={img.source} alt={img.alt} />
             </Col>
           ))}
