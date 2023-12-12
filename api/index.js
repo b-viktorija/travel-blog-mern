@@ -6,6 +6,11 @@ import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 import cookieParser from "cookie-parser"
 import multer from "multer"
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const uploadMiddleware = multer({ dest: "uploads/" })
 // Make require work in es6 type:module;
 import { createRequire } from "module"
@@ -31,6 +36,8 @@ app.use(express.json())
 // connection string: mongodb+srv://blog:<Vtf9e6f5O41rpzAR>@cluster0.g1u.mongodb.net/?retryWrites=true&w=majority
 
 app.use(cookieParser())
+
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 mongoose.connect(
   "mongodb+srv://blog:Vtf9e6f5O41rpzAR@cluster0.g1uznrr.mongodb.net/?retryWrites=true&w=majority"
@@ -106,7 +113,11 @@ app.post("/post", uploadMiddleware.single("file"), async (req, res) => {
     content,
     cover: newPath,
   })
-  res.json({postDoc})
+  res.json({ postDoc })
+})
+
+app.get("/post", async (req, res) => {
+  res.json(await Post.find())
 })
 
 app.listen(port, () => {

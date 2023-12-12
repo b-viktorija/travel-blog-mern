@@ -1,6 +1,7 @@
 import { useState } from "react"
 import ReactQuill from "react-quill"
 import "react-quill/dist/quill.snow.css"
+import { Navigate } from "react-router-dom";
 
 //modules for quill
 const modules = {
@@ -18,28 +19,35 @@ const modules = {
   ],
 }
 
- function CreatePage() {
+function CreatePage() {
   const [title, setTitle] = useState("")
   const [summary, setSummary] = useState("")
   const [content, setContent] = useState("")
   const [files, setFiles] = useState("")
+  const [redirect, setRedirect] = useState(false)
 
   async function createNewPost(e) {
     const data = new FormData()
     data.set("title", title)
     data.set("summary", summary)
     data.set("content", content)
-    data.set('file', files[0]);
+    data.set("file", files[0])
     e.preventDefault()
-    console.log(files);
-    // sending the data to the api endpoint; 
+    console.log(files)
+    // sending the data to the api endpoint;
     const response = await fetch("http://localhost:4000/post", {
-        method: 'POST',
-        body: data, 
-      })
-      console.log(await response.json())
+      method: "POST",
+      body: data,
+      credentials: 'include'
+    }); 
+    if (response.ok) {
+      setRedirect(true)
+    }
   }
 
+  if (redirect) {
+    return <Navigate to={"/"} />
+  }
   return (
     <form className="create" onSubmit={createNewPost}>
       <h3 className="text-center mb-4 text-secondary">
@@ -47,7 +55,6 @@ const modules = {
         and be part of our vibrant community!
       </h3>
       <div>
-        {" "}
         <input
           type="title"
           placeholder="Title"
