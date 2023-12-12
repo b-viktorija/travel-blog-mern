@@ -9,12 +9,8 @@ Travel Blog is a personal project designed to:
 - Gain experience in backend development with the MERN stack;
 - Create a platform for travelers to share their adventures and inspire others;
 
-<!--
-## Demo
-
-- [Live Demo](#) 
-- [Screenshots](#) 
--->
+![screenshot](https://github.com/b-viktorija/travel-blog-mern/blob/5a4da05527da0ac12288672861fb0611f6e8272e/Screenshots/localhost_3000_%20(1).png)
+Screenshots of the remaining pages can be found in the folder 'Screenshots'. 
 
 ## Features
 
